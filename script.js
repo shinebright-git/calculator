@@ -12,11 +12,11 @@ numbers.forEach((number) => {
 	})
 });
 
-let number = '';
+let prevNumber = '';
 let calculationOperator ='';
 let currentNumber = '0';
 
-numbers.forEach ((number) => {
+numbers.forEach((number) => {
 	number.addEventListener("click", (event) => {
 		inputNumber(event.target.value);
 		updateScreen(currentNumber);
@@ -24,9 +24,9 @@ numbers.forEach ((number) => {
 });
 
 const inputNumber = (number) => {
-	if (currentNumber === '0') {
+	if(currentNumber === '0') {
 		currentNumber = number
-	}else {
+	} else {
 		currentNumber += number
 	}
 };
@@ -40,7 +40,7 @@ operators.forEach((operator) => {
 });
 
 const inputOperator = (operator) => {
-	if (calculationOperator === '') {
+	if(calculationOperator === '') {
 		prevNumber = currentNumber;
 	}
 	calculationOperator = operator;
@@ -54,23 +54,24 @@ equalSign.addEventListener('click', () => {
 	updateScreen(currentNumber);
 });
 
-const calculator = () => {
+const calculate = () => {
 	let result = '';
 	switch(calculationOperator) {
-		case "+":
+		case '+':
 			result = parseFloat(prevNumber) + parseFloat(currentNumber)
-			break
-		case "-":
+			break;
+		case '-':
 			result = prevNumber - currentNumber
-			break
-		case "*":
+			break;
+		case '*':
 			result = prevNumber * currentNumber
-			break
-		case "/":
+			break;
+		case '/':
 			result = prevNumber / currentNumber
-			break
+			break;
 		default:
-			return
+			return;
+			
 	}
 	currentNumber = result;
 	calculationOperator = '';
