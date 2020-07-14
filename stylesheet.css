@@ -54,10 +54,3 @@ button:hover {
 .operator:hover, .equal-sign:hover {
 	background-color: darkorange;
 }
-
-.container {
-  width: 100%;
-  padding: 1px 15px;
-  margin: 0 auto;
-  text-align: center;
-}
