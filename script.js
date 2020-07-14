@@ -13,12 +13,12 @@ numbers.forEach((number) => {
 });
 
 let number = '';
-let calculatorOperator ='';
+let calculationOperator ='';
 let currentNumber = '0';
 
 numbers.forEach ((number) => {
 	number.addEventListener("click", (event) => {
-		console.log(event.target.value);
+		inputNumber(event.target.value);
 		updateScreen(currentNumber);
 	})
 });
@@ -35,15 +35,15 @@ const operators = document.querySelectorAll(".operator");
 
 operators.forEach((operator) => {
 	operator.addEventListener("click", (event) => {
-		console.log(event.target.value);
+		inputOperator(event.target.value);
 	})
 });
 
 const inputOperator = (operator) => {
-	if (calculatorOperator === '') {
+	if (calculationOperator === '') {
 		prevNumber = currentNumber;
 	}
-	calculatorOperator = operator;
+	calculationOperator = operator;
 	currentNumber = '';
 };
 
@@ -56,7 +56,7 @@ equalSign.addEventListener('click', () => {
 
 const calculator = () => {
 	let result = '';
-	switch(calculatorOperator) {
+	switch(calculationOperator) {
 		case "+":
 			result = parseFloat(prevNumber) + parseFloat(currentNumber)
 			break
@@ -73,7 +73,7 @@ const calculator = () => {
 			return
 	}
 	currentNumber = result;
-	calculatorOperator = '';
+	calculationOperator = '';
 };
 
 const clearBtn = document.querySelector('.all-clear');
@@ -85,13 +85,13 @@ clearBtn.addEventListener('click', () => {
 
 const clearAll = () => {
 	prevNumber = '';
-	calculatorOperator = '';
+	calculationOperator = '';
 	currentNumber = '0';
 };
 
 const decimal = document.querySelector('.decimal');
 
-decimal.addEventListener('click', () => {
+decimal.addEventListener('click', (event) => {
 	inputDecimal(event.target.value);
 	updateScreen(currentNumber);
 });
