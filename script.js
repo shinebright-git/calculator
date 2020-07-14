@@ -1,4 +1,4 @@
-const numbers = document.querySelectorAll('.calculator-screen');
+const calculatorScreen = document.querySelectorAll('.calculator-screen');
 
 const updateScreen = (number) => {
 	calculatorScreen.value = number;
