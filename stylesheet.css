@@ -2,12 +2,12 @@ body{
 	background: #957DAD;
 }
 
-.container{
-	width: 100%;
-	padding: 1px 15px;
-	margin: 0 auto;
+.container {
+	margin: 40px auto;
+	width: 420px;
 	text-align: center;
-	box-shadow: 10px 10px #E0BBE4
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 #E0BBE4;
 }
 
 .calculator{
