@@ -104,4 +104,17 @@ inputDecimal = (dot) => {
 	currentNumber += dot
 };
 
+const persentage = document.querySelector('.percentage');
 
+persentage.addEventListener('click', (event) => {
+    persentageNumber(event.target.value);
+    updateScreen(currentNumber);
+});
+
+
+const persentageNumber = () => {
+    if (currentNumber === '0') {
+        return;
+    }
+    currentNumber = currentNumber / 100;
+};
